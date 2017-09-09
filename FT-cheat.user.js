@@ -17,7 +17,7 @@ var cheatToolbar = document.createElement('div');
 
 var killButton = document.createElement('button');
 killButton.innerHTML = 'Kill monster';
-killButton.onclick = window.killMonster;
+killButton.onclick = function() { window.killMonster() };
 cheatToolbar.appendChild(killButton);
 
 var DPSButton = document.createElement('button')
@@ -34,6 +34,7 @@ realPromoteCheck.checked = true;
 realPromoteCheck.onchange = function() { window.realPromote = !this.checked; };
 realPromoteLabel.appendChild(realPromoteCheck);
 realPromoteLabel.appendChild(realPromoteText);
+cheatToolbar.appendChild(realPromoteLabel);
 
 // Style the toolbar
 cheatToolbar.style.position = 'absolute';
