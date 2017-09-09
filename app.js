@@ -8801,9 +8801,9 @@ webpackJsonp([ 0 ], [ function(t, e, s) {
             }, n.onPromoteClick = function() {
                 if (!n.state.locked) {
                     var t = n.props.hero;
-                    (t.canBuy({
+                    (!window.realPromote || t.canBuy({
                         promotion: !0
-                    }) || !window.realPromote) && (n.setState({
+                    })) && (n.setState({
                         locked: !0
                     }), t.fakePromote("heroscreen"), n.setState({
                             locked: !1
