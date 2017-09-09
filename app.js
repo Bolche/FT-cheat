@@ -8805,7 +8805,7 @@ webpackJsonp([ 0 ], [ function(t, e, s) {
                         promotion: !0
                     })) && (n.setState({
                         locked: !0
-                    }), t.fakePromote("heroscreen"), n.setState({
+                    }), ( window.realPromote && t.promote("heroscreen") || t.fakePromote("heroscreen") ), n.setState({
                             locked: !1
                     }));
                 }
