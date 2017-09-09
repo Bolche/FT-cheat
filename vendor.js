@@ -3756,6 +3756,10 @@ var vendor_lib = function(t) {
         }
         function a(t, e) {
             var n, r, i;
+	    if (e == Infinity) {
+		e = 999999;
+		console.log("Replaced Infinity by '999999'");
+	    }
             for (0 === e && 1 / e < 0 ? e = "-0" : y.test(e += "") || l(NaN), t.s = "-" == e.charAt(0) ? (e = e.slice(1), 
             -1) : 1, (n = e.indexOf(".")) > -1 && (e = e.replace(".", "")), (r = e.search(/e/i)) > 0 ? (n < 0 && (n = r), 
             n += +e.slice(r + 1), e = e.substring(0, r)) : n < 0 && (n = e.length), r = 0; "0" == e.charAt(r); r++) ;
