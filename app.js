@@ -2927,6 +2927,19 @@ webpackJsonp([ 0 ], [ function(t, e, s) {
                     }
                 }
             });
+	}, e.prototype.fakePromote = function(t) {
+            var e, s, n, r, i, a;
+            if (s = this.get("id"), a = o.getUser(), e = a.get("counters"), i = this.getStars(), 
+		n = this.getPromotion(), e.increment("HPRMT"), e.increment("H#P:" + s), this.set({
+                    promotion: n.plus(1)
+		}), r = this.getStars(), i !== r) return o.show({
+                    popup: {
+			type: "heroNewStar",
+			data: {
+                            heroId: this.get("id")
+			}
+                    }
+		});
         }, e.prototype.onBuyError = function(t) {
             var e, s, n, r, i;
             a.log(t);
@@ -3491,6 +3504,8 @@ webpackJsonp([ 0 ], [ function(t, e, s) {
         MasterAttack: s(94),
         Blessing: s(95)
     };
+    window.game = s(14); // Export symbol to global scope
+    window.numbers = s(8); // Export symbol to global scope
 }, function(t, e, s) {
     var n, o, r = function(t, e) {
         return function() {
@@ -5875,6 +5890,7 @@ webpackJsonp([ 0 ], [ function(t, e, s) {
             this.getResRewardOnClick = w(this.getResRewardOnClick, this), this.getFraction = w(this.getFraction, this), 
             this.sendClicks = w(this.sendClicks, this), this.beforeSendBatch = w(this.beforeSendBatch, this), 
             this.start = w(this.start, this);
+	    window.killMonster = this.killMonster; // Export the symbol to global scope
         }
         var e, s, a, u, m, v, _, C, E, S, T, N;
         return h.extend(t.prototype, i.Events), e = new l(0), S = new l(0), T = new l(0), 
@@ -8890,14 +8906,12 @@ webpackJsonp([ 0 ], [ function(t, e, s) {
             }, n.onPromoteClick = function() {
                 if (!n.state.locked) {
                     var t = n.props.hero;
-                    t.canBuy({
+                    (!window.realPromote || t.canBuy({
                         promotion: !0
-                    }) && (n.setState({
+                    })) && (n.setState({
                         locked: !0
-                    }), t.promote("heroscreen").catch(n.onPromoteFail).finally(function() {
-                        return n.setState({
+                    }), ( window.realPromote && t.promote("heroscreen") || t.fakePromote("heroscreen") ), n.setState({
                             locked: !1
-                        });
                     }));
                 }
             }, n.onPromoteFail = function(t) {
