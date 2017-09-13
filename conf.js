@@ -8887,7 +8887,7 @@ webpackJsonp([ 2 ], {
                     gold: r("9.50499985e+26")
                 }
             } ],
-            special: !0,
+            special: !1,
             position: 3.5
         }, {
             id: 4,
