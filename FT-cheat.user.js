@@ -4,7 +4,7 @@
 // @name        FT cheat
 // @namespace   https://bolche.github.io/FT-cheat/
 // @include     http://faptitans.com/*
-// @version     1
+// @version     2
 // @run-at      document-end
 // @grant       none
 // ==/UserScript==
