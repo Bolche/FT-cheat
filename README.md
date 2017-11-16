@@ -1,4 +1,7 @@
 # FT-cheat
+
+### No longer working on current version ###
+
 A userscript for cheating on a dumb online game
 If you don't know how to install userscripts, check this page: [http://userscripts-mirror.org/about/installing/]
 
