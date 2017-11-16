@@ -16,7 +16,7 @@ window.SCRIPT_SRC = ['https://bolche.github.io/FT-cheat/vendor.js', 'https://bol
 // Create buttons for cheats
 var cheatToolbar = document.createElement('div');
 
-var killButton = document.createElement('button');
+/*var killButton = document.createElement('button');
 killButton.innerHTML = 'Kill monster';
 killButton.onclick = function() { window.killMonster() };
 cheatToolbar.appendChild(killButton);
@@ -36,7 +36,9 @@ realPromoteCheck.onchange = function() { window.realPromote = !this.checked; };
 realPromoteLabel.appendChild(realPromoteCheck);
 realPromoteLabel.appendChild(realPromoteText);
 cheatToolbar.appendChild(realPromoteLabel);
+*/
 
+cheatToolbar.innerHtml = "cheatToolbar disabled by newest game update"
 // Style the toolbar
 cheatToolbar.style.position = 'absolute';
 cheatToolbar.style.bottom = '0';

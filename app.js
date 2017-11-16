@@ -3479,8 +3479,8 @@ webpackJsonp([ 0 ], [ function(t, e, s) {
         MasterAttack: s(94),
         Blessing: s(95)
     };
-    window.game = s(14); // Export symbol to global scope
-    window.numbers = s(8); // Export symbol to global scope
+    //window.game = s(14); // Export symbol to global scope
+    //window.numbers = s(8); // Export symbol to global scope
 }, function(t, e, s) {
     var n, o, r = function(t, e) {
         return function() {
